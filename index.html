@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <!-- 🏷️ إعدادات أساسية -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yousif Dahalan - Front-End Developer Portfolio</title>
+
+    <!-- 🔤 خطوط Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- ✨ أيقونات Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- 🎨 ملف التنسيقات الرئيسي -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- 🔍 إعدادات SEO محسنة -->
+    <meta name="description"
+        content="Portfolio of Yousif Dahalan - Front-End Developer & Cybersecurity student specializing in secure, modern web development and UI/UX design.">
+    <meta name="keywords"
+        content="Front-End Developer, Cybersecurity, Web Development, UI/UX Design, Portfolio, HTML, CSS, JavaScript">
+    <meta name="author" content="Yousif Dahalan">
+
+    <!-- 🖼️ Open Graph tags للسوشيال ميديا (محسنة) -->
+    <meta property="og:title" content="Yousif Dahalan - Front-End Developer Portfolio">
+    <meta property="og:description"
+        content="Front-End Developer & Cybersecurity student creating secure, beautiful, and user-friendly web experiences.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/IMG_1793.JPG"> <!-- تأكد من صحة مسار الصورة -->
+    <meta property="og:url" content="https://yourdomain.com"> <!-- ضع رابط موقعك هنا -->
+
+    <!-- ⚡ Favicon -->
+    <link rel="icon" href="img/icon-yousif.png">
+
+</head>
+
+<body>
+    <!-- 🖱️ مؤشرات الماوس المخصصة -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-follower"></div>
+
+    <!-- 🧭 شريط التنقل الرئيسي مع زر الهامبرجر -->
+    <nav class="main-nav" id="main-nav" role="navigation" aria-label="التنقل الرئيسي">
+        <div class="nav-container container">
+            <!-- شعار الموقع -->
+            <a class="nav-logo" href="#home" aria-label="العودة للصفحة الرئيسية">
+                <img src="img/icon-yousif.png" alt="Yousif Dahalan Logo" class="logo-img">
+            </a>
+
+            <!-- زر قائمة الجوال (هامبرجر) -->
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="فتح قائمة التنقل" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <!-- قائمة التنقل الرئيسية (للشاشات الكبيرة) -->
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a class="nav-link active" href="#home" role="menuitem">Home</a></li>
+                <li role="none"><a class="nav-link" href="#about" role="menuitem">About Me</a></li>
+                <li role="none"><a class="nav-link" href="#services" role="menuitem">Services</a></li>
+                <li role="none"><a class="nav-link" href="#portfolio" role="menuitem">Portfolio</a></li>
+                <li role="none"><a class="nav-link" href="#cv" role="menuitem">CV</a></li>
+                <li role="none"><a class="nav-link" href="#news" role="menuitem">News</a></li>
+                <li role="none"><a class="nav-link" href="#contact" role="menuitem">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- قائمة الجوال المنزلقة -->
+        <div class="mobile-nav-menu" id="mobileNavMenu">
+            <ul role="menu">
+                <li role="none"><a class="mobile-nav-link" href="#home" role="menuitem">Home</a></li>
+                <li role="none"><a class="mobile-nav-link" href="#about" role="menuitem">About Me</a></li>
+                <li role="none"><a class="mobile-nav-link" href="#services" role="menuitem">Services</a></li>
+                <li role="none"><a class="mobile-nav-link" href="#portfolio" role="menuitem">Portfolio</a></li>
+                <li role="none"><a class="mobile-nav-link" href="#cv" role="menuitem">CV</a></li>
+                <li role="none"><a class="mobile-nav-link" href="#news" role="menuitem">News</a></li>
+                <li role="none"><a class="mobile-nav-link" href="#contact" role="menuitem">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 🎬 قسم الصفحة الرئيسية -->
+    <header id="home" class="hero-section text-center">
+        <div class="container hero-content">
+            <!-- صورة الملف الشخصي -->
+            <div class="profile-picture-wrapper gentle-pulse">
+                <img src="img/IMG_1793.JPG" alt="Yousif Dahalan - Front-End Developer" class="profile-picture"
+                    loading="lazy" width="300" height="300">
+            </div>
+
+            <!-- العنوان الرئيسي -->
+            <h1 class="main-heading">
+                <span class="first-name">YOUSIF</span>
+                <span class="last-name"> DAHALAN</span>
+            </h1>
+            <p class="sub-heading">
+                <i class="fas fa-code icon-shake" style="margin-right: 10px;"></i>
+                I'm a <span id="typewriter-text"></span>
+            </p>
+
+            <!-- زر التمرير للأسفل -->
+            <a href="#about" class="scroll-down-arrow" aria-label="تمرير للقسم التالي">
+                <i class="fas fa-chevron-down fa-bounce-slow" aria-hidden="true"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- 👤 قسم "من أنا" -->
+    <section id="about" class="about-section section-padding">
+        <div class="container about-content">
+            <!-- صورة جانبية -->
+            <div class="about-image-wrapper">
+                <img src="img/IMG_17920.JPG" alt="Yousif Dahalan working on a project" class="about-image gentle-pulse"
+                    loading="lazy" width="400" height="500">
+                <div class="decorative-frame"></div>
+            </div>
+
+            <!-- معلومات شخصية -->
+            <div class="about-info-wrapper">
+                <h5 class="section-subtitle">BIOGRAPHY</h5>
+                <h2 class="section-main-title">About Me</h2>
+
+                <p class="intro-text">Hi! My name is <strong>Yousif Dahalan</strong>. I am a Front-End Developer, and
+                    I'm very passionate and dedicated to my work. As a Computer Information Systems student specializing
+                    in Cybersecurity, I combine technical skills with security awareness to create secure and beautiful
+                    web applications.</p>
+
+                <!-- تفاصيل شخصية -->
+                <div class="personal-details-grid">
+                    <div class="detail-item"><i class="fas fa-birthday-cake detail-icon icon-shake"
+                            aria-hidden="true"></i>
+                        <span><strong>Birthday:</strong> 09.09.2002</span>
+                    </div>
+                    <div class="detail-item"><i class="fas fa-user-tag detail-icon icon-shake" aria-hidden="true"></i>
+                        <span><strong>Age:</strong> 23</span>
+                    </div>
+                    <div class="detail-item"><i class="fas fa-map-marker-alt detail-icon icon-shake"
+                            aria-hidden="true"></i>
+                        <span><strong>Location:</strong> Gaza & Cairo</span>
+                    </div>
+                    <div class="detail-item"><i class="fas fa-graduation-cap detail-icon icon-shake"
+                            aria-hidden="true"></i>
+                        <span><strong>Education:</strong> Computer Information Systems & Cybersecurity</span>
+                    </div>
+                    <div class="detail-item"><i class="fas fa-envelope detail-icon icon-shake" aria-hidden="true"></i>
+                        <span><strong>Email:</strong> yousifdahalan2@gmail.com</span>
+                    </div>
+                    <div class="detail-item"><i class="fas fa-phone detail-icon icon-shake" aria-hidden="true"></i>
+                        <span><strong>Phone:</strong> +20 109 825 7442</span>
+                    </div>
+                </div>
+
+                <!-- زر عرض السيرة الذاتية -->
+                <a href="#cv" class="btn-primary btn-float">View My CV</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🛠️ قسم الخدمات -->
+    <section id="services" class="section-padding section-light-bg">
+        <div class="container text-center">
+            <h5 class="section-subtitle">SERVICES</h5>
+            <h2 class="section-main-title">Quality Services</h2>
+
+            <!-- قائمة الخدمات -->
+            <div class="services-list">
+                <div class="service-box gentle-pulse">
+                    <i class="fas fa-code service-icon fa-bounce-slow" aria-hidden="true"></i>
+                    <h4 class="service-title">Web Development</h4>
+                    <p class="service-text">Building responsive, high-performance websites using modern HTML5, CSS3, and
+                        JavaScript with security best practices.</p>
+                </div>
+
+                <div class="service-box gentle-pulse">
+                    <i class="fas fa-paint-brush service-icon fa-spin-slow" aria-hidden="true"></i>
+                    <h4 class="service-title">UI/UX Design</h4>
+                    <p class="service-text">Creating user-friendly and aesthetically pleasing interfaces that provide
+                        excellent user experience across all devices.</p>
+                </div>
+
+                <div class="service-box gentle-pulse">
+                    <i class="fas fa-shield-alt service-icon fa-shake-custom" aria-hidden="true"></i>
+                    <h4 class="service-title">Security-Focused Development</h4>
+                    <p class="service-text">Implementing cybersecurity principles in web development to create secure
+                        applications protected against common threats.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📊 قسم الإحصائيات -->
+    <section id="facts" class="facts-section section-padding section-dark-bg">
+        <div class="container facts-list">
+            <div class="fact-item">
+                <i class="fas fa-project-diagram fa-3x gentle-pulse" style="margin-bottom: 15px;"></i>
+                <span class="fact-number" data-count="68">+0</span>
+                <p class="fact-label">Projects Completed</p>
+            </div>
+            <div class="fact-item">
+                <i class="fas fa-calendar-alt fa-3x gentle-pulse" style="margin-bottom: 15px;"></i>
+                <span class="fact-number" data-count="5">+0</span>
+                <p class="fact-label">Years Experience</p>
+            </div>
+            <div class="fact-item">
+                <i class="fas fa-smile fa-3x gentle-pulse" style="margin-bottom: 15px;"></i>
+                <span class="fact-number" data-count="148">+0</span>
+                <p class="fact-label">Happy Clients</p>
+            </div>
+            <div class="fact-item">
+                <i class="fas fa-coffee fa-3x gentle-pulse" style="margin-bottom: 15px;"></i>
+                <span class="fact-number" data-count="999">+0</span>
+                <p class="fact-label">Cups of Coffee</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🖼️ قسم المعرض -->
+    <section id="portfolio" class="portfolio-section section-padding section-light-bg">
+        <div class="container text-center">
+            <h5 class="section-subtitle">PORTFOLIO</h5>
+            <h2 class="section-main-title">Latest Works</h2>
+
+            <!-- أزرار التصفية -->
+            <div class="portfolio-filters">
+                <span class="filter-item active" data-filter="all" tabindex="0" role="button">All</span>
+                <span class="filter-item" data-filter="web" tabindex="0" role="button">Web Development</span>
+                <span class="filter-item" data-filter="design" tabindex="0" role="button">UI/UX Design</span>
+                <span class="filter-item" data-filter="security" tabindex="0" role="button">Security</span>
+            </div>
+
+            <!-- شبكة المشاريع -->
+            <div class="portfolio-grid">
+                <div class="project-item" data-category="web">
+                    <img src="img/IMG-20211106-WA0029.jpg"
+                        alt="Personal Portfolio Website - Modern design with animations" class="project-img"
+                        loading="lazy">
+                    <div class="project-overlay">
+                        <h4 class="project-title">Personal Portfolio</h4>
+                        <span class="project-category">Web Development</span>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="design">
+                    <img src="img/IMG-20211106-WA0030.jpg" alt="E-commerce UI Design - Clean product layout"
+                        class="project-img" loading="lazy">
+                    <div class="project-overlay">
+                        <h4 class="project-title">E-commerce UI</h4>
+                        <span class="project-category">UI/UX Design</span>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="security">
+                    <img src="img/IMG-20211106-WA0031.jpg" alt="Secure Login System Dashboard with authentication"
+                        class="project-img" loading="lazy">
+                    <div class="project-overlay">
+                        <h4 class="project-title">Secure Login System</h4>
+                        <span class="project-category">Security</span>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="web">
+                    <img src="img/IMG-20211106-WA0032.jpg" alt="Task Manager Application - Interactive interface"
+                        class="project-img" loading="lazy">
+                    <div class="project-overlay">
+                        <h4 class="project-title">Task Manager App</h4>
+                        <span class="project-category">Web Development</span>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="design">
+                    <img src="img/shutterstock_277750193.jpg" alt="Brand Identity Design - Logo and visual elements"
+                        class="project-img" loading="lazy">
+                    <div class="project-overlay">
+                        <h4 class="project-title">Brand Identity</h4>
+                        <span class="project-category">UI/UX Design</span>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="web">
+                    <img src="img/IMG-20211106-WA0033.jpg" alt="Weather Application with live forecasts"
+                        class="project-img" loading="lazy">
+                    <div class="project-overlay">
+                        <h4 class="project-title">Weather App</h4>
+                        <span class="project-category">Web Development</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📄 قسم السيرة الذاتية -->
+    <section id="cv" class="cv-section section-padding section-light-bg">
+        <div class="container">
+            <h5 class="section-subtitle">RESUME</h5>
+            <h2 class="section-main-title text-center">Curriculum Vitae</h2>
+
+            <div class="cv-wrapper">
+                <!-- معاينة السيرة الذاتية -->
+                <div class="cv-preview">
+                    <div class="cv-header">
+                        <h3>YOUSIF AYMAN DAHALAN</h3>
+                        <p class="cv-title">Front-End Developer & Cybersecurity Student</p>
+                        <p class="cv-contact">
+                            <i class="fas fa-phone gentle-pulse" aria-hidden="true"></i> +20 109 825 7442 •
+                            <i class="fas fa-envelope gentle-pulse" aria-hidden="true"></i> yousifdahalan2@gmail.com •
+                            <i class="fas fa-map-marker-alt gentle-pulse" aria-hidden="true"></i> Cairo, Egypt
+                        </p>
+                    </div>
+
+                    <div class="cv-content">
+                        <!-- التعليم -->
+                        <div class="cv-block">
+                            <h4><i class="fas fa-graduation-cap" aria-hidden="true"></i> EDUCATION</h4>
+                            <div class="cv-item">
+                                <h5>Bachelor of Science in Computer Information Systems (Minor in Cybersecurity)</h5>
+                                <span class="cv-date">Al-Quds Open University | Expected Graduation: 2026</span>
+                                <ul>
+                                    <li>Introduction to Cybersecurity</li>
+                                    <li>Computer Fundamentals</li>
+                                    <li>Internet Basics and Communication</li>
+                                    <li>UX Design Fundamentals</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- المهارات -->
+                        <div class="cv-block">
+                            <h4><i class="fas fa-code" aria-hidden="true"></i> TECHNICAL SKILLS</h4>
+                            <div class="skills-grid">
+                                <div class="skill-item">
+                                    <span class="skill-name">Front-End Development</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 90%"></div>
+                                    </div>
+                                    <span class="skill-desc">HTML5, CSS3, JavaScript, Responsive Design</span>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Programming</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 75%"></div>
+                                    </div>
+                                    <span class="skill-desc">Python, C++, JavaScript ES6+</span>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">UI/UX Design</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 85%"></div>
+                                    </div>
+                                    <span class="skill-desc">Canva, Wireframing, User Research</span>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Cybersecurity</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 70%"></div>
+                                    </div>
+                                    <span class="skill-desc">Security Fundamentals, Web Security</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- المشاريع -->
+                        <div class="cv-block">
+                            <h4><i class="fas fa-project-diagram" aria-hidden="true"></i> PERSONAL PROJECTS</h4>
+                            <div class="cv-item">
+                                <h5>Arlo Portfolio Website</h5>
+                                <p>Fully responsive portfolio website using HTML, CSS, JavaScript with custom animations
+                                    and interactive features</p>
+                            </div>
+                            <div class="cv-item">
+                                <h5>Secure Web Application</h5>
+                                <p>JavaScript-based application implementing security best practices and secure
+                                    authentication</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- أزرار التنزيل والطباعة -->
+                <div class="cv-actions">
+                    <a href="cv/YOUSIF%20CV.pdf" class="btn-primary btn-float" download="Yousif_Dahalan_CV.pdf">
+                        <i class="fas fa-download fa-shake-custom" aria-hidden="true"></i> Download CV (PDF)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📰 قسم الأخبار -->
+    <section id="news" class="news-section section-padding section-light-bg">
+        <div class="container text-center">
+            <h5 class="section-subtitle">NEWS</h5>
+            <h2 class="section-main-title">Latest Updates</h2>
+
+            <div class="news-content">
+                <p>Currently pursuing my degree in Computer Information Systems with a focus on Cybersecurity at Al-Quds
+                    Open University. I'm continuously expanding my skills in front-end development while integrating
+                    security principles into web applications.</p>
+                <p>My passion lies in creating secure, user-friendly web experiences that not only look great but also
+                    protect user data. I believe that good design and strong security should go hand in hand in modern
+                    web development.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📞 قسم الاتصال -->
+    <section id="contact" class="contact-section section-padding">
+        <div class="container contact-wrapper">
+            <!-- عمود النموذج -->
+            <div class="contact-form-column">
+                <h5 class="section-subtitle">CONTACT</h5>
+                <h2 class="section-main-title text-left">Get in Touch</h2>
+
+                <p class="contact-intro">Interested in working together? Feel free to contact me for web development
+                    projects, UI/UX design work, or cybersecurity consulting. I'm available Monday through Friday, 9:00
+                    a.m. to 8:00 p.m.</p>
+
+                <!-- نموذج الاتصال مع Formspree -->
+                <form action="https://formspree.io/f/mzddpyzl" method="POST" class="contact-form" id="contactForm">
+                    <!-- حقل الاسم -->
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required aria-label="Your name">
+                    </div>
+
+                    <!-- حقل البريد الإلكتروني -->
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required
+                            aria-label="Your email address">
+                    </div>
+
+                    <!-- حقل الرسالة -->
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" rows="6" required
+                            aria-label="Your message"></textarea>
+                    </div>
+
+                    <!-- ⚙️ إعدادات Formspree المخفية -->
+                    <input type="hidden" name="_subject" value="New message from Portfolio!">
+                    <input type="hidden" name="_replyto" value="">
+                    <input type="hidden" name="_language" value="en">
+                    <input type="text" name="_gotcha" style="display:none" tabindex="-1">
+
+                    <!-- زر الإرسال -->
+                    <button type="submit" class="btn-primary btn-float" id="submitBtn">
+                        <i class="fas fa-paper-plane fa-shake-custom" aria-hidden="true"></i> Send Message
+                    </button>
+                </form>
+            </div>
+
+            <!-- عمود الخريطة -->
+            <div class="contact-map-column">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110502.60389525131!2d31.188423458203118!3d30.044419644366156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145846c9306e97af%3A0x5315ebf6378470c0!2sCairo%2C%20Cairo%20Governorate%2C%20Egypt!5e0!3m2!1sen!2s!4v123456789"
+                    width="100%" height="400" style="border:0;" allowfullscreen loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" class="google-map" title="My location in Cairo, Egypt"
+                    aria-label="Map showing my location in Cairo, Egypt">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🦶 الفوتر -->
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <!-- حقوق النشر -->
+            <p>&copy; <span id="currentYear"></span> All Rights Reserved. Designed & Developed by <strong>Yousif
+                    Dahalan</strong>.</p>
+
+            <!-- الروابط الاجتماعية -->
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/yousif-ayman-a66379361" target="_blank" rel="noopener noreferrer"
+                    aria-label="Visit my LinkedIn profile">
+                    <i class="fab fa-linkedin-in fa-bounce-slow" aria-hidden="true"></i>
+                </a>
+                <a href="https://github.com/yousif-ayman-dev" target="_blank" rel="noopener noreferrer"
+                    aria-label="Visit my GitHub profile">
+                    <i class="fab fa-github fa-spin-slow" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.instagram.com/yousof.a.d" target="_blank" rel="noopener noreferrer"
+                    aria-label="Visit my Instagram profile">
+                    <i class="fab fa-instagram fa-shake-custom" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ⚙️ زر الإعدادات المربع (شكل Arlo المعدل) -->
+    <button class="arlo-square-settings" id="arloSquareSettings" aria-label="إعدادات الموقع">
+        <i class="fas fa-cog arlo-rotating-cog slow-rotate"></i>
+    </button>
+
+    <!-- لوحة الإعدادات -->
+    <div class="arlo-square-panel" id="arloSquarePanel">
+        <div class="arlo-square-header">
+            <h4><i class="fas fa-sliders-h gentle-pulse"></i> Website Settings</h4>
+            <button class="arlo-square-close" aria-label="إغلاق">&times;</button>
+        </div>
+
+        <div class="arlo-square-content">
+            <!-- الوضع الليلي -->
+            <div class="arlo-square-item">
+                <span><i class="fas fa-moon icon-shake"></i> Dark Mode</span>
+                <label class="arlo-square-switch">
+                    <input type="checkbox" id="arloSquareDarkMode">
+                    <span class="arlo-square-slider"></span>
+                </label>
+            </div>
+
+            <!-- تغيير الألوان -->
+            <div class="arlo-square-item">
+                <span><i class="fas fa-palette icon-shake"></i> Change Color</span>
+                <div class="arlo-square-colors">
+                    <button class="arlo-square-color" data-color="#ff1e56" style="background:#ff1e56"
+                        title="Red"></button>
+                    <button class="arlo-square-color" data-color="#27ae60" style="background:#27ae60"
+                        title="Green"></button>
+                    <button class="arlo-square-color" data-color="#3498db" style="background:#3498db"
+                        title="Blue"></button>
+                    <button class="arlo-square-color" data-color="#9b59b6" style="background:#9b59b6"
+                        title="Purple"></button>
+                    <button class="arlo-square-color" data-color="#f39c12" style="background:#f39c12"
+                        title="Orange"></button>
+                </div>
+            </div>
+
+            <!-- إعادة تعيين -->
+            <div class="arlo-square-item">
+                <button class="arlo-square-reset btn-float" id="arloSquareReset">
+                    <i class="fas fa-redo fa-spin-slow"></i> Reset Settings
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 📚 مكتبات JavaScript -->
+    <!-- مكتبة jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- مكتبات الرسوم المتحركة -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
+    <!-- 📜 ملف JavaScript الخاص بنا -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
