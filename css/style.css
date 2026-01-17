@@ -1,37 +1,43 @@
-/* ============================================
-   📦 إعدادات عامة للصفحة
-   ============================================ */
+body {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--light-text);
+    background-color: var(--light-bg);
+    overflow-x: hidden;
+}
 
-/* 🎨 متغيرات الألوان - سهلة التعديل */
+h1,
+h2,
+h3,
+h4,
+.section-main-title {
+    font-family: 'Montserrat', sans-serif;
+}
+
 :root {
-    /* 🎯 الألوان الأساسية */
     --primary-color: #ff1e56;
     --primary-dark: #d1194a;
     --primary-light: #ff6b9d;
     --secondary-color: #3498db;
 
-    /* 🎨 ألوان النص */
     --dark-text: #333333;
     --light-text: #666666;
     --white: #ffffff;
 
-    /* 🎨 ألوان الخلفيات */
     --light-bg: #f5f5f5;
     --section-bg: #ffffff;
     --dark-bg: #111111;
 
-    /* 🎨 الظلال */
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
     --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
 
-    /* 🎨 متغيرات أخرى */
     --transition: 0.3s ease;
     --border-radius: 8px;
     --header-height: 80px;
 }
 
-/* 🧹 إعادة تعيين الهوامش */
 * {
     margin: 0;
     padding: 0;
@@ -49,40 +55,23 @@
     }
 }
 
-/* 🔤 إعدادات أساسية للجسم */
-body {
-    font-family: 'Roboto Mono', monospace;
-    font-weight: 400;
-}
 
-h1,
-h2,
-h3,
-h4,
-.section-main-title {
-    font-family: 'Montserrat', sans-serif;
-}
-
-/* 🔗 تنسيق الروابط */
 a {
     text-decoration: none;
     color: inherit;
     transition: color var(--transition);
 }
 
-/* 🎯 الحاوية الرئيسية */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 30px;
 }
 
-/* 📏 هوامش الأقسام */
 .section-padding {
     padding: 100px 0;
 }
 
-/* 🏷️ العناوين الفرعية */
 .section-subtitle {
     color: var(--primary-color);
     font-size: 0.8rem;
@@ -93,7 +82,6 @@ a {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* 🏷️ العناوين الرئيسية */
 .section-main-title {
     font-size: 2.5rem;
     font-weight: 800;
@@ -101,7 +89,6 @@ a {
     margin-bottom: 50px;
 }
 
-/* 🎨 خلفيات الأقسام */
 .section-light-bg {
     background-color: var(--section-bg);
 }
@@ -111,9 +98,6 @@ a {
     color: var(--white);
 }
 
-/* ============================================
-   🎯 الأزرار
-   ============================================ */
 .btn-primary {
     display: inline-block;
     background-color: var(--primary-color);
@@ -151,9 +135,6 @@ a {
     box-shadow: var(--shadow-md);
 }
 
-/* ============================================
-   🖱️ مؤشر الماوس المخصص (معدل للأداء)
-   ============================================ */
 .custom-cursor {
     position: fixed;
     width: 8px;
@@ -182,14 +163,12 @@ a {
     will-change: transform;
 }
 
-/* ✅ تحسين hover للمؤشر */
 a:hover~.custom-cursor-follower,
 button:hover~.custom-cursor-follower {
     transform: translate(-50%, -50%) scale(1.3);
     opacity: 0.7;
 }
 
-/* 📱 إخفاء المؤشر المخصص على الهواتف */
 @media (max-width: 768px) {
 
     .custom-cursor,
@@ -202,9 +181,6 @@ button:hover~.custom-cursor-follower {
     }
 }
 
-/* ============================================
-    🧭 شريط التنقل (المعدل والمدمج)
-   ============================================ */
 .main-nav {
     position: fixed;
     top: 0;
@@ -235,7 +211,6 @@ button:hover~.custom-cursor-follower {
     transition: color var(--transition);
 }
 
-/* --- القائمة والروابط --- */
 .nav-menu {
     display: flex;
     list-style: none;
@@ -252,7 +227,6 @@ button:hover~.custom-cursor-follower {
     transition: all 0.3s ease;
 }
 
-/* تأثيرات التفاعل (Hover & Active) */
 .nav-menu li a:hover {
     color: var(--primary-color);
     transform: translateY(-1px);
@@ -262,7 +236,6 @@ button:hover~.custom-cursor-follower {
     color: var(--primary-color);
 }
 
-/* تحسين تأثير الخط تحت النص ::after */
 .nav-menu li a::after {
     content: '';
     position: absolute;
@@ -286,7 +259,6 @@ button:hover~.custom-cursor-follower {
             transparent 100%);
 }
 
-/* --- زر الهامبرجر للجوال --- */
 .hamburger-btn {
     display: none;
     background: none;
@@ -313,7 +285,6 @@ button:hover~.custom-cursor-follower {
     background-color: var(--dark-text);
 }
 
-/* تأثير عند فتح القائمة */
 .hamburger-btn.active .hamburger-line:nth-child(1) {
     transform: translateY(10px) rotate(45deg);
 }
@@ -326,7 +297,6 @@ button:hover~.custom-cursor-follower {
     transform: translateY(-10px) rotate(-45deg);
 }
 
-/* --- قائمة الجوال المنزلقة --- */
 .mobile-nav-menu {
     position: fixed;
     top: 0;
@@ -386,8 +356,6 @@ button:hover~.custom-cursor-follower {
     width: 50%;
 }
 
-/* --- الاستجابة (Responsive) --- */
-/* للشاشات المتوسطة */
 @media (max-width: 1100px) {
     .nav-menu {
         gap: 8px;
@@ -399,7 +367,6 @@ button:hover~.custom-cursor-follower {
     }
 }
 
-/* للجوال */
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
@@ -410,7 +377,6 @@ button:hover~.custom-cursor-follower {
     }
 }
 
-/* تغيير الألوان عند التمرير */
 .main-nav.scrolled .nav-menu li a,
 .main-nav.scrolled .nav-logo,
 .main-nav.scrolled .hamburger-line {
@@ -428,9 +394,6 @@ button:hover~.custom-cursor-follower {
     transform: scale(1.1) rotate(5deg);
 }
 
-/* ============================================
-   🎬 الصفحة الرئيسية
-   ============================================ */
 .hero-section {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%),
         url('../img/IMG_1790.JPG');
@@ -449,7 +412,6 @@ button:hover~.custom-cursor-follower {
     max-width: 800px;
 }
 
-/* صورة الملف الشخصي */
 .profile-picture-wrapper {
     width: 150px;
     height: 150px;
@@ -471,7 +433,6 @@ button:hover~.custom-cursor-follower {
     transform: scale(1.05);
 }
 
-/* العناوين */
 .main-heading {
     font-size: 3.5rem;
     font-weight: 800;
@@ -494,7 +455,6 @@ button:hover~.custom-cursor-follower {
     margin-bottom: 40px;
 }
 
-/* تأثير الكتابة */
 #typewriter-text {
     border-right: 2px solid var(--white);
     animation: blink-caret 0.75s step-end infinite;
@@ -515,7 +475,6 @@ button:hover~.custom-cursor-follower {
     }
 }
 
-/* زر التمرير للأسفل */
 .scroll-down-arrow {
     position: absolute;
     bottom: -80px;
@@ -550,9 +509,6 @@ button:hover~.custom-cursor-follower {
     }
 }
 
-/* ============================================
-   👤 قسم "من أنا"
-   ============================================ */
 .about-content {
     display: flex;
     flex-wrap: wrap;
@@ -577,7 +533,6 @@ button:hover~.custom-cursor-follower {
     transform: scale(1.02);
 }
 
-/* الإطار الزخرفي */
 .decorative-frame {
     position: absolute;
     top: 30px;
@@ -605,7 +560,6 @@ button:hover~.custom-cursor-follower {
     line-height: 1.8;
 }
 
-/* الشبكة الشخصية */
 .personal-details-grid {
     display: flex;
     flex-wrap: wrap;
@@ -629,9 +583,6 @@ button:hover~.custom-cursor-follower {
     text-align: center;
 }
 
-/* ============================================
-   🛠️ قسم الخدمات
-   ============================================ */
 .services-list {
     display: flex;
     flex-wrap: wrap;
@@ -680,9 +631,6 @@ button:hover~.custom-cursor-follower {
     line-height: 1.6;
 }
 
-/* ============================================
-   📊 قسم الإحصائيات
-   ============================================ */
 .facts-section {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
         url('../img/funfacts-bg.jpg');
@@ -725,9 +673,6 @@ button:hover~.custom-cursor-follower {
     opacity: 0.9;
 }
 
-/* ============================================
-   🖼️ قسم المعرض
-   ============================================ */
 .portfolio-filters {
     display: flex;
     flex-wrap: wrap;
@@ -827,9 +772,6 @@ button:hover~.custom-cursor-follower {
     border-radius: 20px;
 }
 
-/* ============================================
-   📄 قسم السيرة الذاتية
-   ============================================ */
 .cv-section {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
@@ -915,7 +857,6 @@ button:hover~.custom-cursor-follower {
     margin-bottom: 10px;
 }
 
-/* مهارات */
 .skills-grid {
     display: grid;
     gap: 20px;
@@ -953,7 +894,6 @@ button:hover~.custom-cursor-follower {
     margin-top: 5px;
 }
 
-/* أزرار القسم */
 .cv-actions {
     display: flex;
     flex-wrap: wrap;
@@ -965,9 +905,6 @@ button:hover~.custom-cursor-follower {
     border-top: 1px solid #eee;
 }
 
-/* ============================================
-   📰 قسم الأخبار
-   ============================================ */
 .news-content {
     max-width: 800px;
     margin: 0 auto;
@@ -980,9 +917,6 @@ button:hover~.custom-cursor-follower {
     margin-bottom: 20px;
 }
 
-/* ============================================
-   📞 قسم الاتصال
-   ============================================ */
 .contact-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -1001,7 +935,6 @@ button:hover~.custom-cursor-follower {
     line-height: 1.7;
 }
 
-/* تنسيقات النموذج */
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
@@ -1011,7 +944,7 @@ button:hover~.custom-cursor-follower {
     border: 1px solid #ddd;
     border-radius: var(--border-radius);
     font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Mono', monospace;
     transition: all var(--transition);
     background: var(--section-bg);
     color: var(--dark-text);
@@ -1037,9 +970,6 @@ button:hover~.custom-cursor-follower {
     border: none;
 }
 
-/* ============================================
-   🦶 الفوتر
-   ============================================ */
 .main-footer {
     background-color: #222;
     color: var(--white);
@@ -1085,9 +1015,6 @@ button:hover~.custom-cursor-follower {
     transform: translateY(-3px);
 }
 
-/* ============================================
-   ⚙️ زر الإعدادات المربع (أسفل الثلث العلوي)
-   ============================================ */
 .arlo-square-settings {
     position: fixed;
     top: calc(33vh - 30px);
@@ -1110,14 +1037,12 @@ button:hover~.custom-cursor-follower {
     overflow: hidden;
 }
 
-/* تأثير hover */
 .arlo-square-settings:hover {
     transform: translateY(-5px) rotate(45deg);
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
     border-radius: 20px;
 }
 
-/* أيقونة الترس بتلف */
 .arlo-rotating-cog {
     animation: rotateCog 4s linear infinite;
     transition: transform 0.3s ease;
@@ -1137,9 +1062,6 @@ button:hover~.custom-cursor-follower {
     }
 }
 
-/* ============================================
-   📦 لوحة الإعدادات المربعة
-   ============================================ */
 .arlo-square-panel {
     position: fixed;
     top: calc(33vh + 40px);
@@ -1163,7 +1085,6 @@ button:hover~.custom-cursor-follower {
     visibility: visible;
 }
 
-/* هيدر اللوحة */
 .arlo-square-header {
     display: flex;
     justify-content: space-between;
@@ -1210,7 +1131,6 @@ button:hover~.custom-cursor-follower {
     transform: rotate(90deg);
 }
 
-/* محتوى اللوحة */
 .arlo-square-content {
     padding: 10px 0;
 }
@@ -1243,7 +1163,6 @@ button:hover~.custom-cursor-follower {
     width: 24px;
 }
 
-/* تبديل Dark Mode */
 .arlo-square-switch {
     position: relative;
     display: inline-block;
@@ -1291,7 +1210,6 @@ input:checked+.arlo-square-slider:before {
     transform: translateX(33px);
 }
 
-/* أزرار الألوان */
 .arlo-square-colors {
     display: flex;
     gap: 15px;
@@ -1333,7 +1251,6 @@ input:checked+.arlo-square-slider:before {
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
 
-/* زر إعادة التعيين */
 .arlo-square-reset {
     width: 100%;
     padding: 15px 25px;
@@ -1363,9 +1280,6 @@ input:checked+.arlo-square-slider:before {
     transform: translateY(-1px);
 }
 
-/* ============================================
-   🎯 تطبيقات FLEXBOX المضافة
-   ============================================ */
 .nav-container,
 .about-content,
 .services-list,
@@ -1380,9 +1294,6 @@ input:checked+.arlo-square-slider:before {
     flex-wrap: wrap;
 }
 
-/* ============================================
-   🎬 ANIMATIONS جديدة
-   ============================================ */
 @keyframes slideUpFade {
     from {
         opacity: 0;
@@ -1489,9 +1400,6 @@ section.animated {
     }
 }
 
-/* ============================================
-   ✨ تأثيرات FONT AWESOME محسنة
-   ============================================ */
 .fa-shake-custom {
     --fa-animation-duration: 2s;
     --fa-animation-iteration-count: infinite;
@@ -1505,9 +1413,6 @@ section.animated {
     animation: fa-bounce 2s infinite;
 }
 
-/* ============================================
-   📱 التصميم المتجاوب
-   ============================================ */
 @media (max-width: 991px) {
     .main-heading {
         font-size: 3rem;
@@ -1593,9 +1498,6 @@ section.animated {
     }
 }
 
-/* ============================================
-   ⚡ تحسينات إضافية
-   ============================================ */
 html {
     scroll-behavior: smooth;
 }
@@ -1605,7 +1507,6 @@ textarea {
     font-size: 16px;
 }
 
-/* تحسين التركيز للوصول */
 button:focus-visible,
 input:focus-visible,
 a:focus-visible {
@@ -1613,10 +1514,7 @@ a:focus-visible {
     outline-offset: 2px;
 }
 
-/* ============================================
-   🎨 ثيمات وأحجام الخطوط
-   ============================================ */
-/* الثيم الداكن الكامل والمعدل */
+
 body.dark-theme {
     --dark-text: #f5f5f5;
     --light-text: #b0b0b0;
@@ -1625,18 +1523,54 @@ body.dark-theme {
     --dark-bg: #111;
 }
 
+body.dark-theme .about-section {
+    background-color: var(--light-bg) !important;
+}
+
+body.dark-theme .about-section .section-light-bg {
+    background-color: var(--light-bg) !important;
+}
+
+body.dark-theme .intro-text,
+body.dark-theme .detail-item,
+body.dark-theme .detail-item span,
+body.dark-theme .detail-item strong {
+    color: var(--dark-text) !important;
+}
+
+body.dark-theme .decorative-frame {
+    border-color: #444 !important;
+}
+
+body.dark-theme .detail-icon {
+    color: var(--primary-color) !important;
+}
+
+body.dark-theme .contact-section {
+    background-color: var(--light-bg) !important;
+}
+
+body.dark-theme .contact-form input[type="text"],
+body.dark-theme .contact-form input[type="email"],
+body.dark-theme .contact-form textarea {
+    background-color: #2d2d2d !important;
+    border-color: #444 !important;
+    color: var(--dark-text) !important;
+}
+
+body.dark-theme .contact-form input::placeholder,
+body.dark-theme .contact-form textarea::placeholder {
+    color: #888 !important;
+}
+
+body.dark-theme .contact-intro {
+    color: var(--dark-text) !important;
+}
+
 body.dark-theme .section-light-bg,
 body.dark-theme .section-dark-bg {
     background-color: var(--section-bg) !important;
-}
-
-body.dark-theme .service-box,
-body.dark-theme .cv-wrapper,
-body.dark-theme .contact-form input,
-body.dark-theme .contact-form textarea {
-    background-color: #2d2d2d !important;
-    border-color: #3d3d3d !important;
-    color: #e0e0e0 !important;
+    color: var(--dark-text) !important;
 }
 
 body.dark-theme .section-main-title,
@@ -1647,8 +1581,63 @@ body.dark-theme h5,
 body.dark-theme p,
 body.dark-theme .intro-text,
 body.dark-theme .service-text,
-body.dark-theme .news-content {
+body.dark-theme .news-content,
+body.dark-theme .contact-intro {
     color: var(--dark-text) !important;
+}
+
+body.dark-theme .service-box,
+body.dark-theme .cv-wrapper,
+body.dark-theme .contact-form input,
+body.dark-theme .contact-form textarea,
+body.dark-theme .filter-item {
+    background-color: #2d2d2d !important;
+    border-color: #3d3d3d !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-theme .filter-item {
+    background-color: #333 !important;
+    border-color: #444 !important;
+    color: #ddd !important;
+}
+
+body.dark-theme .filter-item:hover,
+body.dark-theme .filter-item.active {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border-color: var(--primary-color) !important;
+}
+
+body.dark-theme .cv-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+}
+
+body.dark-theme .cv-wrapper {
+    background-color: #2d2d2d !important;
+    border-color: #3d3d3d !important;
+}
+
+body.dark-theme .cv-header h3,
+body.dark-theme .cv-title,
+body.dark-theme .cv-block h4,
+body.dark-theme .cv-item h5,
+body.dark-theme .skill-name {
+    color: #f0f0f0 !important;
+}
+
+body.dark-theme .cv-contact,
+body.dark-theme .skill-desc {
+    color: #b0b0b0 !important;
+}
+
+body.dark-theme .skill-bar {
+    background-color: #444 !important;
+}
+
+body.dark-theme .cv-actions {
+    background-color: #333 !important;
+    border-top-color: #444 !important;
 }
 
 body.dark-theme .main-footer {
@@ -1660,17 +1649,51 @@ body.dark-theme .social-links a {
     background: rgba(255, 255, 255, 0.05) !important;
 }
 
-body.dark-theme .portfolio-filters .filter-item {
-    color: var(--light-text);
+body.dark-theme .facts-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url('../img/funfacts-bg.jpg') !important;
 }
 
-body.dark-theme .portfolio-filters .filter-item.active {
-    color: var(--primary-color);
+body.dark-theme .hero-section {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%),
+        url('../img/IMG_1790.JPG') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
 }
 
-/* ============================================
-   🔔 إشعارات Toast (لنموذج الاتصال)
-   ============================================ */
+body.dark-theme .arlo-square-panel {
+    background-color: #2d2d2d !important;
+    border-color: #3d3d3d !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-theme .arlo-square-header h4,
+body.dark-theme .arlo-square-item span {
+    color: #f0f0f0 !important;
+}
+
+body.dark-theme .arlo-square-item {
+    border-bottom-color: #3d3d3d !important;
+}
+
+body.dark-theme .arlo-square-close {
+    color: #aaa !important;
+}
+
+body.dark-theme .arlo-square-close:hover {
+    color: #fff !important;
+    background-color: #3d3d3d !important;
+}
+
+body.dark-theme .arlo-square-color {
+    border-color: #555 !important;
+}
+
+body.dark-theme .arlo-square-reset {
+    background: linear-gradient(135deg, #495057, #343a40) !important;
+}
+
 .toast-notification {
     position: fixed;
     top: 30px;
@@ -1699,9 +1722,6 @@ body.dark-theme .portfolio-filters .filter-item.active {
     background: linear-gradient(135deg, #e74c3c, #c0392b);
 }
 
-/* ============================================
-   🚨 صفحة 404 مخصصة
-   ============================================ */
 .page-404 {
     display: none;
     position: fixed;
@@ -1743,65 +1763,10 @@ body.dark-theme .portfolio-filters .filter-item.active {
     margin-right: auto;
 }
 
-/* ============================================
-   🎯 تحسينات إضافية للدارك مود على CV والإعدادات
-   ============================================ */
-body.dark-theme .cv-wrapper,
-body.dark-theme .arlo-square-panel {
-    background-color: #2d2d2d !important;
-    border-color: #3d3d3d !important;
-    color: #e0e0e0 !important;
-}
-
-body.dark-theme .cv-header h3,
-body.dark-theme .cv-title,
-body.dark-theme .cv-block h4,
-body.dark-theme .cv-item h5,
-body.dark-theme .skill-name,
-body.dark-theme .arlo-square-header h4 {
-    color: #f0f0f0 !important;
-}
-
-body.dark-theme .cv-contact,
-body.dark-theme .skill-desc,
-body.dark-theme .arlo-square-item span {
-    color: #b0b0b0 !important;
-}
-
-body.dark-theme .skill-bar {
-    background-color: #444 !important;
-}
-
-body.dark-theme .arlo-square-item {
-    border-bottom-color: #3d3d3d !important;
-}
-
-body.dark-theme .arlo-square-close {
-    color: #aaa !important;
-}
-
-body.dark-theme .arlo-square-close:hover {
-    color: #fff !important;
-    background-color: #3d3d3d !important;
-}
-
-body.dark-theme .arlo-square-color {
-    border-color: #555 !important;
-}
-
-body.dark-theme .arlo-square-reset {
-    background: linear-gradient(135deg, #495057, #343a40) !important;
-}
-
-/* ============================================
-   📱 التصميم المتجاوب للإضافات فقط - زر الإعدادات ينتقل لأسفل في الجوال
-   ============================================ */
 @media (max-width: 768px) {
     .arlo-square-settings {
         top: auto;
-        /* نزيل التثبيت العلوي */
         bottom: 25px;
-        /* ننزله لتحت */
         right: 20px;
         width: 55px;
         height: 55px;
@@ -1812,7 +1777,6 @@ body.dark-theme .arlo-square-reset {
     .arlo-square-panel {
         top: auto;
         bottom: 85px;
-        /* اللوحة تطلع فوق الزر */
         right: 20px;
         left: auto;
         width: 320px;
@@ -1864,16 +1828,12 @@ body.dark-theme .arlo-square-reset {
     }
 }
 
-/* للأجهزة التي لا تدعم hover */
 @media (hover: none) and (pointer: coarse) {
     .arlo-square-settings:active {
         transform: scale(0.95);
     }
 }
 
-/* ============================================
-   🎯 إصلاح خلفية قسم CV في الدارك مود
-   ============================================ */
 body.dark-theme .cv-section {
     background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%) !important;
 }
@@ -1883,9 +1843,6 @@ body.dark-theme .cv-actions {
     border-top-color: #444 !important;
 }
 
-/* ============================================
-   🖼️ إصلاح مشكلة كلمة Security الطويلة على الجوال
-   ============================================ */
 @media (max-width: 768px) {
     .portfolio-filters {
         display: flex !important;
@@ -1907,16 +1864,30 @@ body.dark-theme .cv-actions {
         cursor: pointer !important;
     }
 
-    /* إخفاء شريط التمرير */
     .portfolio-filters::-webkit-scrollbar {
         display: none !important;
     }
 }
 
-/* للأجهزة الصغيرة جداً */
 @media (max-width: 480px) {
     .filter-item {
         padding: 8px 12px !important;
         font-size: 0.8rem !important;
     }
+}
+
+body.dark-theme * {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-theme a:not(.btn-primary):not(.nav-link):not(.mobile-nav-link) {
+    color: var(--primary-light) !important;
+}
+
+body.dark-theme a:not(.btn-primary):not(.nav-link):not(.mobile-nav-link):hover {
+    color: var(--primary-color) !important;
+}
+
+body.dark-theme .google-map {
+    filter: brightness(0.8) contrast(1.2);
 }

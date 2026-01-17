@@ -409,19 +409,31 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 10.2 الوضع الليلي - **مُصلح الآن (يستخدم dark-theme)**
+    // 10.2 الوضع الليلي - **مُصلح الآن بالكامل ✅**
     if (squareDarkModeToggle) {
         // تحميل الإعداد المحفوظ
         const savedSquareDarkMode = localStorage.getItem('arloSquareDarkMode') === 'true';
         squareDarkModeToggle.checked = savedSquareDarkMode;
         if (savedSquareDarkMode) {
-            document.body.classList.add('dark-theme'); // تغيير من 'arlo-square-dark'
+            document.body.classList.add('dark-theme');
+            console.log('✅ Dark Mode loaded from localStorage');
         }
 
         // التبديل
         squareDarkModeToggle.addEventListener('change', function () {
-            document.body.classList.toggle('dark-theme', this.checked); // تغيير من 'arlo-square-dark'
-            localStorage.setItem('arloSquareDarkMode', this.checked);
+            const isDarkMode = this.checked;
+            document.body.classList.toggle('dark-theme', isDarkMode);
+            localStorage.setItem('arloSquareDarkMode', isDarkMode);
+            console.log('✅ Dark Mode toggled:', isDarkMode);
+            
+            // إعادة تحميل الأقسام للتأكد من التطبيق
+            setTimeout(() => {
+                document.querySelectorAll('section').forEach(section => {
+                    section.style.display = 'none';
+                    section.offsetHeight; // Force reflow
+                    section.style.display = '';
+                });
+            }, 50);
         });
     }
 
@@ -469,7 +481,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     btn.classList.remove('active');
                 }
             });
-            document.body.classList.remove('dark-theme'); // تغيير من 'arlo-square-dark'
+            document.body.classList.remove('dark-theme');
             if (squareDarkModeToggle) {
                 squareDarkModeToggle.checked = false;
             }
@@ -541,18 +553,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // للاختبار فقط: رابط لفتح 404 (يمكن حذفه)
-    const test404Link = document.createElement('a');
-    test404Link.href = '#';
-    test404Link.textContent = 'Test 404 Page (Dev Only)';
-    test404Link.style.cssText = 'position:fixed; bottom:10px; left:10px; background:#333; color:#fff; padding:5px 10px; border-radius:5px; z-index:99999; font-size:12px;';
-    test404Link.addEventListener('click', function (e) {
-        e.preventDefault();
-        const page404 = simulate404Page();
-        setTimeout(() => page404.classList.add('active'), 10);
-    });
-    // document.body.appendChild(test404Link); // فك التعليق للاختبار المحلي
-
 });
 
 // ============================================
@@ -576,3 +576,14 @@ window.addEventListener('error', function (e) {
 window.addEventListener('unhandledrejection', function (e) {
     console.error('Unhandled promise rejection:', e.reason);
 });
+
+// ============================================
+// 14. 🔧 اختبار سريع للدارك مود (للمطورين فقط)
+// ============================================
+// يمكن حذف هذا القسم بعد التأكد من عمل الدارك مود
+window.testDarkMode = function() {
+    const isDark = document.body.classList.contains('dark-theme');
+    document.body.classList.toggle('dark-theme');
+    console.log('Dark Mode test:', !isDark ? 'ON' : 'OFF');
+    return !isDark;
+};
