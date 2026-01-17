@@ -2,23 +2,18 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <!-- 🏷️ إعدادات أساسية -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yousif Dahalan - Front-End Developer Portfolio</title>
 
-    <!-- 🔤 خطوط Google Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&family=Montserrat:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- ✨ أيقونات Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- 🎨 ملف التنسيقات الرئيسي -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- 🔍 إعدادات SEO محسنة -->
     <meta name="keywords"
         content="يوسف أيمن, يوسف دحلان, يوسف ايمن, yousif ayman, yousof ayman, yousef ayman, yousif dahalan, yousof dahalan, yousef dahalan, yousif dahlan, yousof dahlan, yousef dahlan, front end developer, web developer, portfolio, فرونت اند">
 
@@ -26,7 +21,6 @@
         content="الموقع الشخصي للمطور يوسف دحلان (يوسف أيمن) - مطور واجهات أمامية (Front-End Developer) متخصص في بناء مواقع احترافية.">
     <meta name="author" content="Yousif Dahalan">
 
-    <!-- 🖼️ Open Graph tags للسوشيال ميديا (محسنة) -->
     <meta property="og:title" content="Yousif Dahalan - Front-End Developer Portfolio">
     <meta property="og:description"
         content="Front-End Developer & Cybersecurity student creating secure, beautiful, and user-friendly web experiences.">
@@ -34,32 +28,26 @@
     <meta property="og:image" content="img/IMG_1793.JPG"> <!-- تأكد من صحة مسار الصورة -->
     <meta property="og:url" content="https://yourdomain.com"> <!-- ضع رابط موقعك هنا -->
 
-    <!-- ⚡ Favicon -->
     <link rel="icon" href="img/icon-yousif.png">
 
 </head>
 
 <body>
-    <!-- 🖱️ مؤشرات الماوس المخصصة -->
     <div class="custom-cursor"></div>
     <div class="custom-cursor-follower"></div>
 
-    <!-- 🧭 شريط التنقل الرئيسي مع زر الهامبرجر -->
     <nav class="main-nav" id="main-nav" role="navigation" aria-label="التنقل الرئيسي">
         <div class="nav-container container">
-            <!-- شعار الموقع -->
             <a class="nav-logo" href="#home" aria-label="العودة للصفحة الرئيسية">
                 <img src="img/icon-yousif.png" alt="Yousif Dahalan Logo" class="logo-img">
             </a>
 
-            <!-- زر قائمة الجوال (هامبرجر) -->
             <button class="hamburger-btn" id="hamburgerBtn" aria-label="فتح قائمة التنقل" aria-expanded="false">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
             </button>
 
-            <!-- قائمة التنقل الرئيسية (للشاشات الكبيرة) -->
             <ul class="nav-menu" role="menubar">
                 <li role="none"><a class="nav-link active" href="#home" role="menuitem">Home</a></li>
                 <li role="none"><a class="nav-link" href="#about" role="menuitem">About Me</a></li>
@@ -71,7 +59,6 @@
             </ul>
         </div>
 
-        <!-- قائمة الجوال المنزلقة -->
         <div class="mobile-nav-menu" id="mobileNavMenu">
             <ul role="menu">
                 <li role="none"><a class="mobile-nav-link" href="#home" role="menuitem">Home</a></li>
@@ -85,16 +72,13 @@
         </div>
     </nav>
 
-    <!-- 🎬 قسم الصفحة الرئيسية -->
     <header id="home" class="hero-section text-center">
         <div class="container hero-content">
-            <!-- صورة الملف الشخصي -->
             <div class="profile-picture-wrapper gentle-pulse">
                 <img src="img/IMG_1793.JPG" alt="Yousif Dahalan - Front-End Developer" class="profile-picture"
                     loading="lazy" width="300" height="300">
             </div>
 
-            <!-- العنوان الرئيسي -->
             <h1 class="main-heading">
                 <span class="first-name">YOUSIF</span>
                 <span class="last-name"> DAHALAN</span>
@@ -104,24 +88,20 @@
                 I'm a <span id="typewriter-text"></span>
             </p>
 
-            <!-- زر التمرير للأسفل -->
             <a href="#about" class="scroll-down-arrow" aria-label="تمرير للقسم التالي">
                 <i class="fas fa-chevron-down fa-bounce-slow" aria-hidden="true"></i>
             </a>
         </div>
     </header>
 
-    <!-- 👤 قسم "من أنا" -->
     <section id="about" class="about-section section-padding">
         <div class="container about-content">
-            <!-- صورة جانبية -->
             <div class="about-image-wrapper">
                 <img src="img/IMG_17920.JPG" alt="Yousif Dahalan working on a project" class="about-image gentle-pulse"
                     loading="lazy" width="400" height="500">
                 <div class="decorative-frame"></div>
             </div>
 
-            <!-- معلومات شخصية -->
             <div class="about-info-wrapper">
                 <h5 class="section-subtitle">BIOGRAPHY</h5>
                 <h2 class="section-main-title">About Me</h2>
@@ -131,7 +111,6 @@
                     in Cybersecurity, I combine technical skills with security awareness to create secure and beautiful
                     web applications.</p>
 
-                <!-- تفاصيل شخصية -->
                 <div class="personal-details-grid">
                     <div class="detail-item"><i class="fas fa-birthday-cake detail-icon icon-shake"
                             aria-hidden="true"></i>
@@ -156,19 +135,16 @@
                     </div>
                 </div>
 
-                <!-- زر عرض السيرة الذاتية -->
                 <a href="#cv" class="btn-primary btn-float">View My CV</a>
             </div>
         </div>
     </section>
 
-    <!-- 🛠️ قسم الخدمات -->
     <section id="services" class="section-padding section-light-bg">
         <div class="container text-center">
             <h5 class="section-subtitle">SERVICES</h5>
             <h2 class="section-main-title">Quality Services</h2>
 
-            <!-- قائمة الخدمات -->
             <div class="services-list">
                 <div class="service-box gentle-pulse">
                     <i class="fas fa-code service-icon fa-bounce-slow" aria-hidden="true"></i>
@@ -194,7 +170,6 @@
         </div>
     </section>
 
-    <!-- 📊 قسم الإحصائيات -->
     <section id="facts" class="facts-section section-padding section-dark-bg">
         <div class="container facts-list">
             <div class="fact-item">
@@ -220,13 +195,11 @@
         </div>
     </section>
 
-    <!-- 🖼️ قسم المعرض -->
     <section id="portfolio" class="portfolio-section section-padding section-light-bg">
         <div class="container text-center">
             <h5 class="section-subtitle">PORTFOLIO</h5>
             <h2 class="section-main-title">Latest Works</h2>
 
-            <!-- أزرار التصفية -->
             <div class="portfolio-filters">
                 <span class="filter-item active" data-filter="all" tabindex="0" role="button">All</span>
                 <span class="filter-item" data-filter="web" tabindex="0" role="button">Web Development</span>
@@ -234,7 +207,6 @@
                 <span class="filter-item" data-filter="security" tabindex="0" role="button">Security</span>
             </div>
 
-            <!-- شبكة المشاريع -->
             <div class="portfolio-grid">
                 <div class="project-item" data-category="web">
                     <img src="img/IMG-20211106-WA0029.jpg"
@@ -294,14 +266,12 @@
         </div>
     </section>
 
-    <!-- 📄 قسم السيرة الذاتية -->
     <section id="cv" class="cv-section section-padding section-light-bg">
         <div class="container">
             <h5 class="section-subtitle">RESUME</h5>
             <h2 class="section-main-title text-center">Curriculum Vitae</h2>
 
             <div class="cv-wrapper">
-                <!-- معاينة السيرة الذاتية -->
                 <div class="cv-preview">
                     <div class="cv-header">
                         <h3>YOUSIF AYMAN DAHALAN</h3>
@@ -314,7 +284,6 @@
                     </div>
 
                     <div class="cv-content">
-                        <!-- التعليم -->
                         <div class="cv-block">
                             <h4><i class="fas fa-graduation-cap" aria-hidden="true"></i> EDUCATION</h4>
                             <div class="cv-item">
@@ -329,7 +298,6 @@
                             </div>
                         </div>
 
-                        <!-- المهارات -->
                         <div class="cv-block">
                             <h4><i class="fas fa-code" aria-hidden="true"></i> TECHNICAL SKILLS</h4>
                             <div class="skills-grid">
@@ -364,7 +332,6 @@
                             </div>
                         </div>
 
-                        <!-- المشاريع -->
                         <div class="cv-block">
                             <h4><i class="fas fa-project-diagram" aria-hidden="true"></i> PERSONAL PROJECTS</h4>
                             <div class="cv-item">
@@ -381,7 +348,6 @@
                     </div>
                 </div>
 
-                <!-- أزرار التنزيل والطباعة -->
                 <div class="cv-actions">
                     <a href="cv/YOUSIF%20CV.pdf" class="btn-primary btn-float" download="Yousif_Dahalan_CV.pdf">
                         <i class="fas fa-download fa-shake-custom" aria-hidden="true"></i> Download CV (PDF)
@@ -391,7 +357,6 @@
         </div>
     </section>
 
-    <!-- 📰 قسم الأخبار -->
     <section id="news" class="news-section section-padding section-light-bg">
         <div class="container text-center">
             <h5 class="section-subtitle">NEWS</h5>
@@ -408,10 +373,8 @@
         </div>
     </section>
 
-    <!-- 📞 قسم الاتصال -->
     <section id="contact" class="contact-section section-padding">
         <div class="container contact-wrapper">
-            <!-- عمود النموذج -->
             <div class="contact-form-column">
                 <h5 class="section-subtitle">CONTACT</h5>
                 <h2 class="section-main-title text-left">Get in Touch</h2>
@@ -420,39 +383,32 @@
                     projects, UI/UX design work, or cybersecurity consulting. I'm available Monday through Friday, 9:00
                     a.m. to 8:00 p.m.</p>
 
-                <!-- نموذج الاتصال مع Formspree -->
                 <form action="https://formspree.io/f/mzddpyzl" method="POST" class="contact-form" id="contactForm">
-                    <!-- حقل الاسم -->
                     <div class="form-group">
                         <input type="text" name="name" placeholder="Your Name" required aria-label="Your name">
                     </div>
 
-                    <!-- حقل البريد الإلكتروني -->
                     <div class="form-group">
                         <input type="email" name="email" placeholder="Your Email" required
                             aria-label="Your email address">
                     </div>
 
-                    <!-- حقل الرسالة -->
                     <div class="form-group">
                         <textarea name="message" placeholder="Your Message" rows="6" required
                             aria-label="Your message"></textarea>
                     </div>
 
-                    <!-- ⚙️ إعدادات Formspree المخفية -->
                     <input type="hidden" name="_subject" value="New message from Portfolio!">
                     <input type="hidden" name="_replyto" value="">
                     <input type="hidden" name="_language" value="en">
                     <input type="text" name="_gotcha" style="display:none" tabindex="-1">
 
-                    <!-- زر الإرسال -->
                     <button type="submit" class="btn-primary btn-float" id="submitBtn">
                         <i class="fas fa-paper-plane fa-shake-custom" aria-hidden="true"></i> Send Message
                     </button>
                 </form>
             </div>
 
-            <!-- عمود الخريطة -->
             <div class="contact-map-column">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110502.60389525131!2d31.188423458203118!3d30.044419644366156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145846c9306e97af%3A0x5315ebf6378470c0!2sCairo%2C%20Cairo%20Governorate%2C%20Egypt!5e0!3m2!1sen!2s!4v123456789"
@@ -464,14 +420,11 @@
         </div>
     </section>
 
-    <!-- 🦶 الفوتر -->
     <footer class="main-footer">
         <div class="container footer-content">
-            <!-- حقوق النشر -->
             <p>&copy; <span id="currentYear"></span> All Rights Reserved. Designed & Developed by <strong>Yousif
                     Dahalan</strong>.</p>
 
-            <!-- الروابط الاجتماعية -->
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/yousif-ayman-a66379361" target="_blank" rel="noopener noreferrer"
                     aria-label="Visit my LinkedIn profile">
@@ -489,12 +442,10 @@
         </div>
     </footer>
 
-    <!-- ⚙️ زر الإعدادات المربع (شكل Arlo المعدل) -->
     <button class="arlo-square-settings" id="arloSquareSettings" aria-label="إعدادات الموقع">
         <i class="fas fa-cog arlo-rotating-cog slow-rotate"></i>
     </button>
 
-    <!-- لوحة الإعدادات -->
     <div class="arlo-square-panel" id="arloSquarePanel">
         <div class="arlo-square-header">
             <h4><i class="fas fa-sliders-h gentle-pulse"></i> Website Settings</h4>
@@ -502,7 +453,6 @@
         </div>
 
         <div class="arlo-square-content">
-            <!-- الوضع الليلي -->
             <div class="arlo-square-item">
                 <span><i class="fas fa-moon icon-shake"></i> Dark Mode</span>
                 <label class="arlo-square-switch">
@@ -511,7 +461,6 @@
                 </label>
             </div>
 
-            <!-- تغيير الألوان -->
             <div class="arlo-square-item">
                 <span><i class="fas fa-palette icon-shake"></i> Change Color</span>
                 <div class="arlo-square-colors">
@@ -528,7 +477,6 @@
                 </div>
             </div>
 
-            <!-- إعادة تعيين -->
             <div class="arlo-square-item">
                 <button class="arlo-square-reset btn-float" id="arloSquareReset">
                     <i class="fas fa-redo fa-spin-slow"></i> Reset Settings
@@ -537,14 +485,10 @@
         </div>
     </div>
 
-    <!-- 📚 مكتبات JavaScript -->
-    <!-- مكتبة jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- مكتبات الرسوم المتحركة -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
 
-    <!-- 📜 ملف JavaScript الخاص بنا -->
     <script src="js/main.js"></script>
 
 </body>
