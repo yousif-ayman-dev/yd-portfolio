@@ -1,21 +1,6 @@
-/* ============================================
-   📜 ملف JavaScript الرئيسي - النسخة النهائية المعدلة
-   ============================================
-   
-   🎯 التعديلات الرئيسية:
-   1. إصلاح نظام Dark Mode
-   2. إضافة قائمة هامبرجر للجوال مع ترتيب Z-index محكم
-   3. تحسين نموذج Formspree مع إشعارات Toast
-   4. تحسين إمكانية الوصول (Accessibility)
-   5. إضافة صفحة 404
-   ============================================ */
-
-// ⏳ انتظار تحميل DOM بالكامل
 document.addEventListener("DOMContentLoaded", function () {
 
-    // ============================================
-    // 1. 🧭 شريط التنقل الثابت وقائمة الجوال
-    // ============================================
+
     const nav = document.getElementById('main-nav');
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const mobileNavMenu = document.getElementById('mobileNavMenu');
@@ -32,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 
-    // فتح/إغلاق قائمة الجوال
     if (hamburgerBtn && mobileNavMenu) {
         function toggleMobileMenu() {
             const isExpanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
@@ -40,13 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
             mobileNavMenu.classList.toggle('active');
             hamburgerBtn.setAttribute('aria-expanded', !isExpanded);
 
-            // منع التمرير عند فتح القائمة
             document.body.style.overflow = mobileNavMenu.classList.contains('active') ? 'hidden' : '';
         }
 
         hamburgerBtn.addEventListener('click', toggleMobileMenu);
 
-        // إغلاق القائمة عند النقر على رابط
         mobileNavLinks.forEach(link => {
             link.addEventListener('click', () => {
                 hamburgerBtn.classList.remove('active');
@@ -56,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-        // إغلاق القائمة عند النقر خارجها
         document.addEventListener('click', function (e) {
             if (mobileNavMenu.classList.contains('active') &&
                 !mobileNavMenu.contains(e.target) &&
@@ -66,9 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ============================================
-    // 2. ✍️ تأثير الكتابة التلقائي
-    // ============================================
+
     const textElement = document.getElementById('typewriter-text');
     if (textElement) {
         const phrases = ["Front-End Developer", "UI/UX Designer", "Cybersecurity Student"];
@@ -100,9 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
         type();
     }
 
-    // ============================================
-    // 3. 🎯 التنقل النشط (للقائمتين)
-    // ============================================
+
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
 
@@ -126,9 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('scroll', updateActiveNav, { passive: true });
     updateActiveNav();
 
-    // ============================================
-    // 4. 🖼️ فلترة المعرض (مُحسَّنة للوصول)
-    // ============================================
+
     const filterButtons = document.querySelectorAll('.filter-item');
     const portfolioItems = document.querySelectorAll('.project-item');
 
@@ -152,7 +127,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     filterButtons.forEach(button => {
-        // النقر
         button.addEventListener('click', () => {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
@@ -160,7 +134,6 @@ document.addEventListener("DOMContentLoaded", function () {
             filterPortfolio(filterValue);
         });
 
-        // الدخول بالمفتاح (Enter/Space)
         button.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
@@ -169,18 +142,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // ============================================
-    // 5. 📝 معالجة نموذج الاتصال مع Formspree وإشعارات Toast
-    // ============================================
+
     const contactForm = document.getElementById('contactForm');
 
-    // دالة لعرض إشعارات Toast
     function showToast(message, type = 'success') {
-        // إزالة أي إشعار قديم
         const oldToast = document.querySelector('.toast-notification');
         if (oldToast) oldToast.remove();
 
-        // إنشاء الإشعار الجديد
         const toast = document.createElement('div');
         toast.className = `toast-notification toast-${type}`;
         toast.textContent = message;
@@ -189,10 +157,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.body.appendChild(toast);
 
-        // عرض الإشعار
         setTimeout(() => toast.classList.add('show'), 10);
 
-        // إخفاء الإشعار بعد 5 ثوانٍ
         setTimeout(() => {
             toast.classList.remove('show');
             setTimeout(() => {
@@ -209,7 +175,6 @@ document.addEventListener("DOMContentLoaded", function () {
             const nameInput = this.querySelector('input[name="name"]');
             const name = nameInput.value || 'User';
 
-            // حالة التحميل
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
 
@@ -222,12 +187,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
 
                 if (response.ok) {
-                    // ✅ نجاح الإرسال
                     showToast(`Thank you ${name}! Your message has been sent. I'll respond soon.`, 'success');
                     submitBtn.innerHTML = '<i class="fas fa-check"></i> Sent!';
                     submitBtn.style.backgroundColor = '#2ecc71';
 
-                    // إعادة تعيين النموذج بعد 2 ثانية
                     setTimeout(() => {
                         this.reset();
                         submitBtn.innerHTML = originalHTML;
@@ -238,7 +201,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     throw new Error('Form submission failed');
                 }
             } catch (error) {
-                // ❌ فشل الإرسال
                 console.error('Form error:', error);
                 showToast(`Sorry ${name}, there was an error. Please email me directly.`, 'error');
                 submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Try Again';
@@ -253,9 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ============================================
-    // 6. 🔢 الأرقام المتحركة مع Intersection Observer
-    // ============================================
+
     const factsSection = document.getElementById('facts');
     if (factsSection) {
         const factsObserver = new IntersectionObserver((entries) => {
@@ -285,9 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
         factsObserver.observe(factsSection);
     }
 
-    // ============================================
-    // 7. 🖱️ مؤشر الماوس المخصص (محسن للأداء)
-    // ============================================
+
     const cursor = document.querySelector('.custom-cursor');
     const cursorFollower = document.querySelector('.custom-cursor-follower');
 
@@ -330,9 +288,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ============================================
-    // 8. 📱 إصلاح ارتفاع الصفحة الرئيسية
-    // ============================================
+
     function fixHeroHeight() {
         const heroSection = document.querySelector('.hero-section');
         if (heroSection) {
@@ -342,9 +298,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('resize', fixHeroHeight, { passive: true });
     fixHeroHeight();
 
-    // ============================================
-    // 9. 👁️ ظهور الأقسام عند التمرير مع Animation
-    // ============================================
+
     const allSections = document.querySelectorAll('section');
     function revealOnScroll() {
         allSections.forEach(section => {
@@ -358,9 +312,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('scroll', revealOnScroll, { passive: true });
     revealOnScroll();
 
-    // ============================================
-    // 10. ⚙️ لوحة الإعدادات المربعة (Arlo Square Settings) - معدلة
-    // ============================================
+
     const squareSettingsBtn = document.getElementById('arloSquareSettings');
     const squareSettingsPanel = document.getElementById('arloSquarePanel');
     const squareCloseBtn = document.querySelector('.arlo-square-close');
@@ -368,7 +320,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const squareColorBtns = document.querySelectorAll('.arlo-square-color');
     const squareResetBtn = document.getElementById('arloSquareReset');
 
-    // 10.1 فتح/إغلاق لوحة الإعدادات
     if (squareSettingsBtn && squareSettingsPanel) {
         squareSettingsBtn.addEventListener('click', function (e) {
             e.stopPropagation();
@@ -409,9 +360,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 10.2 الوضع الليلي - **مُصلح الآن بالكامل ✅**
     if (squareDarkModeToggle) {
-        // تحميل الإعداد المحفوظ
         const savedSquareDarkMode = localStorage.getItem('arloSquareDarkMode') === 'true';
         squareDarkModeToggle.checked = savedSquareDarkMode;
         if (savedSquareDarkMode) {
@@ -419,25 +368,22 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log('✅ Dark Mode loaded from localStorage');
         }
 
-        // التبديل
         squareDarkModeToggle.addEventListener('change', function () {
             const isDarkMode = this.checked;
             document.body.classList.toggle('dark-theme', isDarkMode);
             localStorage.setItem('arloSquareDarkMode', isDarkMode);
             console.log('✅ Dark Mode toggled:', isDarkMode);
-            
-            // إعادة تحميل الأقسام للتأكد من التطبيق
+
             setTimeout(() => {
                 document.querySelectorAll('section').forEach(section => {
                     section.style.display = 'none';
-                    section.offsetHeight; // Force reflow
+                    section.offsetHeight;
                     section.style.display = '';
                 });
             }, 50);
         });
     }
 
-    // 10.3 تغيير الألوان
     function squareShadeColor(color, percent) {
         let R = parseInt(color.substring(1, 3), 16);
         let G = parseInt(color.substring(3, 5), 16);
@@ -468,7 +414,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // 10.4 إعادة التعيين
     if (squareResetBtn) {
         squareResetBtn.addEventListener('click', function () {
             document.documentElement.style.setProperty('--primary-color', '#ff1e56');
@@ -491,7 +436,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 10.5 تحميل التفضيلات المحفوظة
     function loadSquarePreferences() {
         const savedSquareColor = localStorage.getItem('arloSquarePrimaryColor');
         if (savedSquareColor) {
@@ -507,13 +451,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     loadSquarePreferences();
 
-    // ============================================
-    // 11. 🚨 محاكاة صفحة 404 للاختبار (تعمل عند زيارة رابط غير صحيح)
-    // ============================================
-    // في موقع حقيقي، هذه الصفحة تكون منفصلة (404.html)
-    // هذه مجرد محاكاة للعرض
+
     function simulate404Page() {
-        // إنصراف الصفحة إذا وجدت مسبقاً
+
         const oldPage = document.querySelector('.page-404');
         if (oldPage) oldPage.remove();
 
@@ -529,7 +469,7 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
         document.body.appendChild(page404);
 
-        // إضافة حدث للزر للعودة للرئيسية
+
         const backBtn = page404.querySelector('a');
         if (backBtn) {
             backBtn.addEventListener('click', (e) => {
@@ -544,7 +484,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return page404;
     }
 
-    // للاختبار فقط: عرض صفحة 404 عند الضغط على Ctrl+Alt+4
+
     document.addEventListener('keydown', function (e) {
         if (e.ctrlKey && e.altKey && e.key === '4') {
             e.preventDefault();
@@ -555,9 +495,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-// ============================================
-// 12. 🚀 تأثير تحميل الصفحة
-// ============================================
+
 window.addEventListener('load', function () {
     document.body.classList.add('loaded');
     const yearElement = document.getElementById('currentYear');
@@ -566,9 +504,7 @@ window.addEventListener('load', function () {
     }
 });
 
-// ============================================
-// 13. 🛡️ معالجة الأخطاء العامة
-// ============================================
+
 window.addEventListener('error', function (e) {
     console.error('Global error:', e.error);
 });
@@ -577,11 +513,8 @@ window.addEventListener('unhandledrejection', function (e) {
     console.error('Unhandled promise rejection:', e.reason);
 });
 
-// ============================================
-// 14. 🔧 اختبار سريع للدارك مود (للمطورين فقط)
-// ============================================
-// يمكن حذف هذا القسم بعد التأكد من عمل الدارك مود
-window.testDarkMode = function() {
+
+window.testDarkMode = function () {
     const isDark = document.body.classList.contains('dark-theme');
     document.body.classList.toggle('dark-theme');
     console.log('Dark Mode test:', !isDark ? 'ON' : 'OFF');
